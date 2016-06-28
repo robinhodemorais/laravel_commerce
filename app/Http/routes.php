@@ -19,6 +19,7 @@ Route::group(['prefix'=> 'admin/products'], function () {
 });
 
 Route::group(['prefix'=> 'categories'], function () {
+    Route::post('', 'CategoriesController@store');
     Route::get('', 'CategoriesController@index');
     Route::get('/create', 'CategoriesController@create');
 });
