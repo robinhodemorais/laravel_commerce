@@ -19,5 +19,16 @@ class AdminCategoriesController extends Controller
         return view('categories', compact('categories'));
     }
 
+    public function create(){
+        return "View Create";
+    }
+
+    public function edit($id){
+        return "View Edit registro ".$id;
+    }
+
+    public function remove($id){
+        return "View Remove registro ".$id;
+    }
 
 }
