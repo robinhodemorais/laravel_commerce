@@ -25,7 +25,7 @@ class CategoriesController extends Controller
     }
 
     /*armazena os dados enviado para o bd*/
-    public function store(Request $request){
+    public function store(Requests\CategoryRequest $request){
        $input = $request->all();
         //preenche os dados do categoryModel no input
        $category = $this->categoryModel->fill($input);

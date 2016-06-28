@@ -5,6 +5,14 @@
     <div class="container">
         <h1>Create Category</h1>
 
+        @if($errors->any())
+            <ul class="alert">
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        @endif
+
         <!-- url que é enviado os dados
           Só de colocar a url, já ativa o submit do botão
         -->
@@ -17,7 +25,7 @@
 
             <div class="form-group">
                 {!! Form::label('description','Description:') !!}
-                {!! Form::textArea('description', null, ['class'=>'form-control']) !!}
+                {!! Form::textarea('description', null, ['class'=>'form-control']) !!}
             </div>
 
             <div class="form-group">
