@@ -19,7 +19,7 @@
 					@endif
 
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
-						{!! csrf_field() !!}
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="token" value="{{ $token }}">
 
 						<div class="form-group">
