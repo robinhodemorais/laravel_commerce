@@ -23,11 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="56a12889-5aa8-47c9-b4b6-87444cd6fbf6">
-        <schema name="main" object-types="column, constraint, index, table, dataset trigger, view" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="56a12889-5aa8-47c9-b4b6-87444cd6fbf6">
@@ -35,11 +31,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-list connection-id="56a12889-5aa8-47c9-b4b6-87444cd6fbf6" dataset="main.products" active-filter-id="">
-      <filter id="6f33595e-2d4e-45fc-8a74-0cfa54c0aaf3" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
-        <condition column="id" operator="=" value="" active="true" />
-      </filter>
-    </filter-list>
+    <filter-list connection-id="56a12889-5aa8-47c9-b4b6-87444cd6fbf6" dataset="main.products" active-filter-id="EMPTY_FILTER" />
     <filter-list connection-id="56a12889-5aa8-47c9-b4b6-87444cd6fbf6" dataset="main.categories" active-filter-id="">
       <filter id="1f2f3c1f-4798-4134-b894-7ac9d4534fed" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="" active="true" />
