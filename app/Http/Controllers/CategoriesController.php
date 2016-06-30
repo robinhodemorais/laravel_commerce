@@ -41,4 +41,21 @@ class CategoriesController extends Controller
         $this->categoryModel->find($id)->delete();
         return redirect()->route('categories');
     }
+
+    /*Action responsavel para fazer a alteração*/
+    public function update(Requests\CategoryRequest $request, $id)
+    {
+        //pega o registro de acordo com o id e dá um update
+        $this->categoryModel->find($id)->update($request->all());
+
+        return redirect()->route('categories');
+    }
+
+    public function edit($id)
+    {
+        //pega o registro que quer editar
+        $category = $this->categoryModel->find($id);
+        //passa a $category pelo compact para a view edit
+        return view('categories.edit', compact('category'));
+    }
 }
