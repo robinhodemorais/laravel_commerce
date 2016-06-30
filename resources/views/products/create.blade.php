@@ -34,16 +34,13 @@
             {!! Form::text('price', null, ['class'=>'form-control']) !!}
         </div>
 
-        <!-- featured -->
         <div class="form-group">
-            {!! Form::label('featured','Featured : ') !!}
-            {!! Form::checkbox('featured', false) !!}
+            {!! Form::label('featured', 'Featured:') !!}
+            {!! Form::select('featured', ['1' => 'True', '0' => 'False'], 0, ['class' => 'form-control']) !!}
         </div>
-
-        <!-- recommend -->
         <div class="form-group">
-            {!! Form::label('recommend','Recommend : ') !!}
-            {!! Form::checkbox('recommend', false) !!}
+            {!! Form::label('recommend', 'Recommend:') !!}
+            {!! Form::select('recommend', ['1' => 'True', '0' => 'False'], 0, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">

@@ -24,8 +24,8 @@
                     <th>{{$product->name}}</th>
                     <th>{{$product->description}}</th>
                     <th>{{$product->price}}</th>
-                    <th>{{$product->featured}}</th>
-                    <th>{{$product->recommend}}</th>
+                    <td>{{ $product->featured == 1 ? 'Yes' : 'No' }}</td>
+                    <td>{{ $product->recommend == 1 ? 'Yes' : 'No' }}</td>
                     <th>
                         <a href="{{ route('products.edit',['id'=>$product->id]) }}">Edit</a>
                         |

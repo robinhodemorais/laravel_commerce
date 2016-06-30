@@ -40,13 +40,13 @@
             <!-- featured -->
             <div class="form-group">
                 {!! Form::label('featured','Featured : ') !!}
-                {!! Form::checkbox('featured', $product->featured) !!}
+                {!! Form::select('featured', [$product->featured => 'NÃO', 1 => 'SIM'], null, ['class' => 'form-control']) !!}
             </div>
 
             <!-- recommend -->
             <div class="form-group">
                 {!! Form::label('recommend','Recommend : ') !!}
-                {!! Form::checkbox('recommend', $product->recommend) !!}
+                {!! Form::select('recommend', [$product->recommend => 'NÃO', 1 => 'SIM'], null, ['class' => 'form-control']) !!}
             </div>
 
         <div class="form-group">
