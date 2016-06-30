@@ -18,10 +18,13 @@ Route::group(['prefix'=> 'admin/products'], function () {
     Route::get('remove/{id}', 'AdminProductsController@remove');
 });
 
-Route::group(['prefix'=> 'categories'], function () {
+/*Route::group(['prefix'=> 'categories'], function () {
     Route::post('', 'CategoriesController@store');
     Route::get('', 'CategoriesController@index');
     Route::get('/create', 'CategoriesController@create');
-});
-
-
+    Route::get('/{id}/destroy', 'CategoriesController@destroy');
+});*/
+Route::post('categories', ['as'=>'categories', 'uses'=>'CategoriesController@store']);
+Route::get('categories', ['as'=>'categories.store', 'uses'=>'CategoriesController@index']);
+Route::get('categories/create', ['as'=>'categories.create', 'uses'=>'CategoriesController@create']);
+Route::get('categories/{id}/destroy', ['as'=>'categories.destroy', 'uses'=>'CategoriesController@destroy']);

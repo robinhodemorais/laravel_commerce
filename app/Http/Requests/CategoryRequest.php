@@ -29,4 +29,5 @@ class CategoryRequest extends Request
             'description' => 'required',
         ];
     }
+
 }

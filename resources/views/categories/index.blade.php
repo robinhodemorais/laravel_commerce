@@ -16,7 +16,9 @@
                     <th>{{$category->id}}</th>
                     <th>{{$category->name}}</th>
                     <th>{{$category->description}}</th>
-                    <th></th>
+                    <th>
+                        <a href="{{ route('categories.destroy',['id'=>$category->id]) }}">Delete</a>
+                    </th>
                 </tr>
             @endforeach
         </table>
