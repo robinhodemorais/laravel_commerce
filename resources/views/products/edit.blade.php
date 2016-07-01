@@ -19,6 +19,16 @@
         -->
         {!! Form::open(['route'=>['products.update', $product->id], 'method'=>'put']) !!}
 
+            <!-- category
+            category_id é o campo de relacionamento da tabela Products
+            $categories traz a listagem de categorias
+            -->
+            <div class="form-group">
+                {!! Form::label('category','Category : ') !!}
+                {!! Form::select('category_id', $categories, $product->category->id, ['class'=>'form-control']) !!}
+            </div>
+
+
             <!-- name -->
             <div class="form-group">
                 {!! Form::label('name','Name :') !!}
@@ -50,7 +60,7 @@
             </div>
 
         <div class="form-group">
-            {!!Form::submit('Add Product', ['class'=>'btn btn-primary']) !!}
+            {!!Form::submit('Save Product', ['class'=>'btn btn-primary']) !!}
         </div>
 
         {!! Form::close() !!}

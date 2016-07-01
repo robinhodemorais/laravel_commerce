@@ -2,6 +2,7 @@
 
 namespace CodeCommerce\Http\Controllers;
 
+use CodeCommerce\Category;
 use CodeCommerce\Product;
 use CodeCommerce\Http\Requests;
 
@@ -16,12 +17,19 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = $this->productModel->all();
+        //paginate > informa de quanto em quanto registro
+        //cria paginas de listagem dos produtos
+        $products = $this->productModel->paginate(10);
         return view('products.index', compact('products'));
     }
 
-    public function  create(){
-        return view('products.create');
+    //declarando a Category na function, o laravel automaticamente
+    //instancia a Category nessa function, chamado Method Injection
+    public function  create(Category $category){
+        //lista todas as categorias
+        //o metodo lists permite informar quais campos irá trazer da tabela
+        $categories = $category->lists('name','id');
+        return view('products.create', compact('categories'));
     }
 
     /*armazena os dados enviado para o bd*/
@@ -51,12 +59,16 @@ class ProductsController extends Controller
         return redirect()->route('products');
     }
 
-    public function edit($id)
+    public function edit($id, Category $category)
     {
+        //lista todas as categorias
+        //o metodo lists permite informar quais campos irá trazer da tabela
+        $categories = $category->lists('name','id');
+
         //pega o registro que quer editar
         $product = $this->productModel->find($id);
         //passa a $category pelo compact para a view edit
-        return view('products.edit', compact('product'));
+        return view('products.edit', compact('product','categories'));
     }
 
 

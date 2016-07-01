@@ -28,6 +28,12 @@
                 </tr>
             @endforeach
         </table>
+
+        <!-- Cria a paginação
+       Quando utiliza o !! é para não dar o scape
+       -->
+        {!! $categories->render() !!}
+
     </div>
 
 

@@ -16,6 +16,15 @@
 
         {!! Form::open(['route'=>'products.store']) !!}
 
+        <!-- category
+        category_id é o campo de relacionamento da tabela Products
+        $categories traz a listagem de categorias
+        -->
+        <div class="form-group">
+            {!! Form::label('category','Category : ') !!}
+            {!! Form::select('category_id', $categories, null, ['class'=>'form-control']) !!}
+        </div>
+
         <!-- name -->
         <div class="form-group">
             {!! Form::label('name','Name :') !!}
