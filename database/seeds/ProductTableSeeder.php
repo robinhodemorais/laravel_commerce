@@ -12,12 +12,12 @@ use Illuminate\Database\Eloquent\Model;
 use CodeCommerce\Category;
 use Faker\Factory as Faker;
 
-class CategoryTableSeeder extends Seeder
+class ProductTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('categories')->truncate();
+        DB::table('products')->truncate();
 
-        factory('CodeCommerce\Category',10)->create();
+        factory('CodeCommerce\Product',20)->create();
     }
 }
