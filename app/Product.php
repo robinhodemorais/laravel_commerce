@@ -15,6 +15,12 @@ class Product extends Model
         'recommend'
     ];
 
+    //Relaciona a imagem com o produto
+    public function images()
+    {
+        return $this->hasMany('CodeCommerce\ProductImage');
+    }
+
     //Lista as categorias do produtos.
     public function category()
     {

@@ -20,6 +20,11 @@ Route::group(['prefix'=>'admin', 'where'=>['id' => '0-9+']], function ()
         Route::get('{id}/destroy', ['as' => 'products.destroy', 'uses' => 'ProductsController@destroy']);
         Route::get('{id}/edit', ['as' => 'products.edit', 'uses' => 'ProductsController@edit']);
         Route::put('{id}/update', ['as' => 'products.update', 'uses' => 'ProductsController@update']);
+
+        //site.com.br/admin/products/images/[id]/product
+        //Route::group(['prefix'=>'images'], function (){
+            Route::get('{id}/images', ['as' => 'products.images', 'uses' => 'ProductsController@images']);
+        //});
     });
 });
 
