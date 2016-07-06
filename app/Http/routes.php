@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix'=>'admin', 'where'=>['id' => '0-9+']], function ()
+Route::group(['prefix'=>'admin'], function ()
 {
     Route::group(['prefix'=>'categories'], function ()
     {
@@ -21,12 +21,15 @@ Route::group(['prefix'=>'admin', 'where'=>['id' => '0-9+']], function ()
         Route::get('{id}/edit', ['as' => 'products.edit', 'uses' => 'ProductsController@edit']);
         Route::put('{id}/update', ['as' => 'products.update', 'uses' => 'ProductsController@update']);
 
-        //site.com.br/admin/products/images/[id]/product
-        //Route::group(['prefix'=>'images'], function (){
-            Route::get('{id}/images', ['as' => 'products.images', 'uses' => 'ProductsController@images']);
-        //});
+        Route::group(['prefix'=>'images'], function (){
+            //site.com.br/admin/products/images/[id]/product
+            Route::get('{id}/product',['as'=>'products.images', 'uses'=>'ProductsController@images']);
+            Route::get('create/{id}/product',['as'=>'products.images.create', 'uses'=>'ProductsController@createImage']);
+            Route::post('store/{id}/product',['as'=>'products.images.store', 'uses'=>'ProductsController@storeImage']);
+        });
     });
 });
+
 
 Route::get('/', 'WelcomeController@index');
 //Route::get('exemplo', 'WelcomeController@index');

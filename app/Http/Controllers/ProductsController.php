@@ -5,6 +5,10 @@ namespace CodeCommerce\Http\Controllers;
 use CodeCommerce\Category;
 use CodeCommerce\Product;
 use CodeCommerce\Http\Requests;
+use CodeCommerce\ProductImage;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -73,9 +77,32 @@ class ProductsController extends Controller
 
     public function images($id)
     {
-        $product = $this->productModel->find('$id');
+        $product = $this->productModel->find($id);
 
         return view('products.images', compact('product'));
+
+        //return view('products.images');
+    }
+
+    public function createImage($id)
+    {
+        $product = $this->productModel->find($id);
+
+        return view('products.create_image', compact('product'));
+    }
+
+    public function storeImage(Request $request, $id, ProductImage $productImage)
+    {
+        //pega o arquivo
+        $file = $request->file('image');
+        $extension = $file->getClientOriginalExtension();
+
+        $image = $productImage::create(['product_id'=>$id, 'extension'=>$extension]);
+        
+        Storage::disk('public_local')->put($image->id.'.'.$extension, File::get($file));
+
+        return redirect()->route('products.images',['id'=>$id]);
+
     }
 
 
