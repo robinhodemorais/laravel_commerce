@@ -14,12 +14,17 @@
             @foreach($product->images as $image)
                 <tr>
                     <th>{{$image->id}}</th>
+                    <th>
+                        <img src="{{url('uploads/'.$image->id.'.'.$image->extension)}}" width="80">
+                    </th>
                     <th>{{$image->extension}}</th>
                     <th>
                     </th>
                 </tr>
             @endforeach
         </table>
+
+        <a href="{{route('products')}}" class="btn btn-default">Voltar</a>
 
 
     </div>

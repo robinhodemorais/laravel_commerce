@@ -29,9 +29,12 @@
                 <!-- <td>{{ $product->featured == 1 ? 'Yes' : 'No' }}</td>
                     <td>{{ $product->recommend == 1 ? 'Yes' : 'No' }}</td> -->
                     <th>
-                        <a href="{{ route('products.edit',['id'=>$product->id]) }}">Edit</a>
-                        |
-                        <a href="{{ route('products.destroy',['id'=>$product->id]) }}">Delete</a>
+                        <a href="{{ route('products.edit',['id'=>$product->id]) }}"
+                           class="btn btn-default glyphicon glyphicon-pencil"></a> |
+                        <a href="{{ route('products.images',['id'=>$product->id]) }}"
+                           class="btn btn-default glyphicon glyphicon-picture"></a> |
+                        <a href="{{ route('products.destroy',['id'=>$product->id]) }}"
+                           class="btn btn-default glyphicon glyphicon-remove"></a>
                     </th>
                 </tr>
             @endforeach
