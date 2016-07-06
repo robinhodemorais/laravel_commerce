@@ -13,13 +13,14 @@
             </tr>
             @foreach($product->images as $image)
                 <tr>
-                    <th>{{$image->id}}</th>
-                    <th>
+                    <td>{{$image->id}}</td>
+                    <td>
                         <img src="{{url('uploads/'.$image->id.'.'.$image->extension)}}" width="80">
-                    </th>
-                    <th>{{$image->extension}}</th>
-                    <th>
-                    </th>
+                    </td>
+                    <td>{{$image->extension}}</td>
+                    <td>
+                        <a href="{{route('products.images.destroy', ['id'=>$image->id])}}">Delete</a>
+                    </td>
                 </tr>
             @endforeach
         </table>
