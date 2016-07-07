@@ -32,7 +32,7 @@ Route::group(['prefix'=>'admin'], function ()
 });
 
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'StoreController@index');
 //Route::get('exemplo', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 /*

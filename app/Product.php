@@ -31,4 +31,22 @@ class Product extends Model
     {
         return $this->belongsToMany('CodeCommerce\Tag');
     }
+
+    //cria um atributo do Nome e Descrição
+    //quando utiliza o get no inicio e Attributte no final
+    //o laravel cria automaticamente.
+    public function getNameDescriptionAttribute()
+    {
+        return $this->name." - ".$this->description;
+    }
+
+    //cria um atributo listando as tags
+    public function getTagListAttribute()
+    {
+        $tags = $this->tags->lists('name');
+
+        //separa a listagem das tags por virgula
+        return implode(',', $tags);
+    }
+    
 }
