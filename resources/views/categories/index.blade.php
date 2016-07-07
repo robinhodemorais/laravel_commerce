@@ -21,9 +21,10 @@
                     <th>{{$category->name}}</th>
                     <th>{{$category->description}}</th>
                     <th>
-                        <a href="{{ route('categories.edit',['id'=>$category->id]) }}">Edit</a>
-                        |
-                        <a href="{{ route('categories.destroy',['id'=>$category->id]) }}">Delete</a>
+                        <a href="{{ route('categories.edit',['id'=>$category->id]) }}"
+                           class="btn btn-default glyphicon glyphicon-pencil"></a> |
+                        <a href="{{ route('categories.destroy',['id'=>$category->id]) }}"
+                           class="btn btn-default glyphicon glyphicon-remove"></a>
                     </th>
                 </tr>
             @endforeach

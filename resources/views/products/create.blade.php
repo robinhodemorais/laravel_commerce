@@ -54,7 +54,7 @@
 
         <div class="form-group">
             {!!Form::submit('Add Product', ['class'=>'btn btn-primary']) !!}
-            <a href="{{route('products')}}" class="btn btn-danger">Voltar</a>
+            <a href="{{route('products')}}" class="btn btn-danger glyphicon glyphicon-arrow-left">Voltar</a>
         </div>
 
         {!! Form::close() !!}

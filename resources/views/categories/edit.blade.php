@@ -30,7 +30,8 @@
             </div>
 
             <div class="form-group">
-                {!!Form::submit('Save Category', ['class'=>'btn btn-primary form-control']) !!}
+                {!!Form::submit('Save Category', ['class'=>'btn btn-primary']) !!}
+                <a href="{{route('categories')}}" class="btn btn-danger glyphicon glyphicon-arrow-left">Voltar</a>
             </div>
 
         {!! Form::close() !!}

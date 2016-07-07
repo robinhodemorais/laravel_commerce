@@ -4,6 +4,7 @@
 
     <div class="container">
         <h1>Images of {{$product->name}}</h1>
+        <a href="{{route('products.images.create',['id'=>$product->id])}}" class="btn btn-default">New Image</a>
         <br>
         <table class="table">
             <tr>
