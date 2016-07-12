@@ -11,9 +11,6 @@
                 </div>
             @endforeach
 
-        </div><!--/category-products-->
-
-
-
+        </div>
     </div>
 </div>
