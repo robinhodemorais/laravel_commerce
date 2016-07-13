@@ -9,7 +9,7 @@
     <title>Home | E-Shop</title>
 
 
-    <link href="css/all.css" rel="stylesheet">
+    <link href="{{elixir('css/all.css')}}" rel="stylesheet">
 
 
 </head><!--/head-->
@@ -142,7 +142,7 @@
 
 
 
-<script src="js/all.js"></script>
+<script src="{{elixir('js/all.js')}}"></script>
 
 </body>
 </html>

@@ -31,4 +31,9 @@ elixir(function(mix) {
         'main.js',
     ], 'public/js/all.js');
 
+    /*
+    * Toda vez quando roda o gulp, vera uma versão
+    */
+    mix.version(['css/all.css', 'js/all.js']);
+
 });
