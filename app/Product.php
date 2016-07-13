@@ -48,5 +48,10 @@ class Product extends Model
         //separa a listagem das tags por virgula
         return implode(',', $tags);
     }
+
+    public function scopeFeatured($query)
+    {
+        return $query->where('featured','=',1);
+    }
     
 }

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="296fcd9a-ea4d-4e59-8dec-786a59e4aaf4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/5.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/database.sqlite" afterPath="$PROJECT_DIR$/storage/database.sqlite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/store/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/store/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StoreController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StoreController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Product.php" afterPath="$PROJECT_DIR$/app/Product.php" />
     </list>
     <ignored path="laravel_commerce.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StoreController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StoreController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoreController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+            <state relative-caret-position="308">
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
               <folding>
                 <element signature="e#49#75#0#PHP" expanded="true" />
               </folding>
@@ -49,21 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/store/index.blade.php">
+      <file leaf-file-name="Product.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="19" column="93" selection-start-line="19" selection-start-column="93" selection-end-line="19" selection-end-column="93" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="categories_partial.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/store/categories_partial.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -120,12 +109,12 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_07_07_112625_create_tags_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_07_114814_ProductTag.php" />
         <option value="$PROJECT_DIR$/app/Tag.php" />
-        <option value="$PROJECT_DIR$/app/Product.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/store/store.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/store/categories_partial.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StoreController.php" />
         <option value="$PROJECT_DIR$/resources/views/store/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Product.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/StoreController.php" />
       </list>
     </option>
   </component>
@@ -472,7 +461,7 @@
       <workItem from="1467912994979" duration="1989000" />
       <workItem from="1467924636826" duration="605000" />
       <workItem from="1468099670660" duration="1026000" />
-      <workItem from="1468342306124" duration="4216000" />
+      <workItem from="1468342306124" duration="4436000" />
     </task>
     <task id="LOCAL-00001" summary="Criando os primeiros Models">
       <created>1467046152793</created>
@@ -663,11 +652,18 @@
       <option name="project" value="LOCAL" />
       <updated>1468345380395</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Exibindo imagens de produtos">
+      <created>1468429056908</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1468429056908</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88841000" />
+    <option name="totallyTimeSpent" value="89061000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
@@ -733,7 +729,8 @@
     <MESSAGE value="Montando Template" />
     <MESSAGE value="Listando categories" />
     <MESSAGE value="Exibindo produtos recomendados." />
-    <option name="LAST_COMMIT_MESSAGE" value="Exibindo produtos recomendados." />
+    <MESSAGE value="Exibindo imagens de produtos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exibindo imagens de produtos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1057,25 +1054,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/no-img.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoreController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="e#49#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/store/categories_partial.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/no-img.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/store/index.blade.php">
@@ -1086,13 +1085,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoreController.php">
+    <entry file="file://$PROJECT_DIR$/app/Product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding>
-            <element signature="e#49#75#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="462">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
