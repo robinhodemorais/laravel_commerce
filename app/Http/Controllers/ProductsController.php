@@ -119,5 +119,16 @@ class ProductsController extends Controller
 
     }
 
+    private function storeTag($inputTags, $id)
+    {
+        $tag = new Tag();
+        foreach ($inputTags as $key => $value) {
+            $newTag = $tag->firstOrCreate(["name" => $value]);
+            $idTags[] = $newTag->id;
+        }
+        $product = $this->productModel->find($id);
+        $product->tags()->sync($idTags);
+    }
+
 
 }

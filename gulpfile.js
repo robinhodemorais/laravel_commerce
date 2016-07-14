@@ -36,4 +36,9 @@ elixir(function(mix) {
     */
     mix.version(['css/all.css', 'js/all.js']);
 
+    /*
+    Copia os assets que queria, para qualquer lugar que quiser
+     */
+    mix.copy('resources/assets/fonts', 'public/build/fonts');
+
 });

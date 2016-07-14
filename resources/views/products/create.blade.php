@@ -47,9 +47,15 @@
             {!! Form::label('featured', 'Featured:') !!}
             {!! Form::select('featured', ['1' => 'True', '0' => 'False'], 0, ['class' => 'form-control']) !!}
         </div>
+        
         <div class="form-group">
             {!! Form::label('recommend', 'Recommend:') !!}
             {!! Form::select('recommend', ['1' => 'True', '0' => 'False'], 0, ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('tags', 'TAGs:') !!}
+            {!! Form::textarea('tags', null, ['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">

@@ -53,5 +53,6 @@ class Product extends Model
     {
         return $query->where('featured','=',1);
     }
-    
+
+
 }
