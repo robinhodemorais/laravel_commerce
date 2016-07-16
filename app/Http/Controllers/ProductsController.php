@@ -98,7 +98,7 @@ class ProductsController extends Controller
         $extension = $file->getClientOriginalExtension();
 
         $image = $productImage::create(['product_id'=>$id, 'extension'=>$extension]);
-        
+
         Storage::disk('public_local')->put($image->id.'.'.$extension, File::get($file));
 
         return redirect()->route('products.images',['id'=>$id]);

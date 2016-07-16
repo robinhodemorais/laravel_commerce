@@ -3,6 +3,7 @@
 namespace CodeCommerce;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Product extends Model
 {
@@ -43,7 +44,7 @@ class Product extends Model
     //cria um atributo listando as tags
     public function getTagListAttribute()
     {
-        $tags = $this->tags->lists('name');
+        $tags = $this->tags->lists('name')->toArray();
 
         //separa a listagem das tags por virgula
         return implode(',', $tags);
@@ -51,7 +52,7 @@ class Product extends Model
 
     public function scopeFeatured($query)
     {
-        return $query->where('featured','=',1);
+        return $query->where('featured', '=', 1)->orderBy(DB::raw('RANDOM()'))->limit(3);
     }
 
 
