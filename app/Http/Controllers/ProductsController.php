@@ -39,7 +39,7 @@ class ProductsController extends Controller
 
     /*armazena os dados enviado para o bd*/
     public function store(Requests\ProductRequest $request){
-        $input = $request->all();
+       /* $input = $request->all();
 
         $input['featured'] = $request->get('featured') ? true : false;
         $input['recommend'] = $request->get('recommend') ? true : false;
@@ -52,7 +52,11 @@ class ProductsController extends Controller
         $product->save();
 
         //após salvar, redireciona para a pagina categories e lista
-        return redirect()->route('products');
+        return redirect()->route('products');*/
+        $product = $this->productModel->fill($request->all());
+        $product->save();
+        $inputTags = array_map('trim', explode(',', $request->get('tags')));
+        $this->storeTag($inputTags,$product->id);
 
     }
 
@@ -67,27 +71,38 @@ class ProductsController extends Controller
         //pega o registro de acordo com o id e dá um update
         //$this->productModel->find($id)->update($request->all());
 
-        $input = $request->all();
+       /* $input = $request->all();
         $input['featured'] = $request->get('featured') ? true : false;
         $input['recommend'] = $request->get('recommend') ? true : false;
         $arrayTags = $this->tagToArray($input['tags']);
         $this->productModel->find($id)->update($input);
         $product = Product::find($id);
-        $product->tags()->sync($arrayTags);
+        $product->tags()->sync($arrayTags);*/
+
+        $this->productModel->findOrNew($id)->update($request->all());
+        $input = array_map('trim', explode(',', $request->get('tags')));
+        $this->storeTag($input,$id);
 
         return redirect()->route('products');
     }
 
     public function edit($id, Category $category)
     {
-        //pega o registro que quer editar
+       /* //pega o registro que quer editar
         $product = $this->productModel->find($id);
 
         $product->tags = $product->tag_list;
 
+      //  dd($product->tags);
+
         //lista todas as categorias
         //o metodo lists permite informar quais campos irá trazer da tabela
         $categories = $category->lists('name','id');
+
+       // dd($categories);*/
+
+        $categories = $category->lists('name', 'id');
+        $product = $this->productModel->find($id);
 
         //passa a $category pelo compact para a view edit
         return view('products.edit', compact('product','categories'));
@@ -138,7 +153,7 @@ class ProductsController extends Controller
 
     }
 
-    /*
+
     private function storeTag($inputTags, $id)
     {
         $tag = new Tag();
@@ -148,7 +163,9 @@ class ProductsController extends Controller
         }
         $product = $this->productModel->find($id);
         $product->tags()->sync($idTags);
-    }*/
+
+
+    }
 
     private function tagToArray($tags)
     {
