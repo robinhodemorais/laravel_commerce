@@ -45,12 +45,12 @@
 
         <div class="form-group">
             {!! Form::label('featured', 'Featured:') !!}
-            {!! Form::select('featured', ['1' => 'True', '0' => 'False'], 0, ['class' => 'form-control']) !!}
+            {!! Form::select('featured', ['1' => 'SIM', '0' => 'NÃO'], 0, ['class' => 'form-control']) !!}
         </div>
         
         <div class="form-group">
             {!! Form::label('recommend', 'Recommend:') !!}
-            {!! Form::select('recommend', ['1' => 'True', '0' => 'False'], 0, ['class' => 'form-control']) !!}
+            {!! Form::select('recommend', ['1' => 'SIM', '0' => 'NÃO'], 0, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">

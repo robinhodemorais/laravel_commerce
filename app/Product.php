@@ -55,5 +55,8 @@ class Product extends Model
         return $query->where('featured', '=', 1)->orderBy(DB::raw('RANDOM()'))->limit(3);
     }
 
-
+    public function scopeRecommend($query)
+    {
+        return $query->where('recommend', '=', 1)->orderBy(DB::raw('RANDOM()'))->limit(3);
+    }
 }
