@@ -60,6 +60,9 @@ class Product extends Model
         return $query->where('recommend', '=', 1)->orderBy(DB::raw('RANDOM()'))->limit(3);
     }
 
+    /*
+     * Escopo global, onde podemos passar mais outro parametro
+     */
     public function scopeOfCategory($query, $type)
     {
         return $query->where('category_id','=',$type);
