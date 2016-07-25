@@ -32,9 +32,9 @@ Route::group(['prefix'=>'admin'], function ()
 });
 
 
-Route::get('/', 'StoreController@index');
-//Route::get('exemplo', 'WelcomeController@index');
-Route::get('home', 'HomeController@index');
+Route::get('/', ['as' => 'store.index', 'uses' => 'StoreController@index']);
+Route::get('category/{id}',['as'=>'store.category', 'uses' => 'StoreController@category']);
+
 /*
 Route::group(['prefix'=> 'admin/categories'], function () {
     Route::get('', 'AdminCategoriesController@index');
