@@ -23,13 +23,15 @@ class Cart
         /*
          * na qtd verifica se tem algum item, se conter ele soma se não incluir 1
          */
-        $this->items + [
+        $this->items += [
             $id => [
                 'qtd' => isset($this->items[$id]['qtd'])? $this->items[$id]['qtd']++:1,
                 'price' => $price,
                 'name' => $name
             ]
         ];
+
+        return $this->items;
     }
 
     public function remove($id)

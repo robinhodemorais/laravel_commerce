@@ -20,12 +20,12 @@
                         @foreach($cart->all() as $k=>$item)
                             <tr>
                                 <td class="cart_product">
-                                    <a href="#">
+                                    <a href="{{route('store.product',['id'=>$k])}}">
                                         Imagem
                                     </a>
                                 </td>
                                 <td class="cart_description">
-                                    <h4><a href="#">{{$item['name']}}</a> </h4>
+                                    <h4><a href="{{route('store.product',['id'=>$k])}}">{{$item['name']}}</a> </h4>
                                     <p>Código: {{ $k }}</p>
                                 </td>
                                 <td class="cart_price">
@@ -39,7 +39,7 @@
                                 </td>
                                 <td class="cart_delete">
                                     <a href="#" class="cart_quantity_delete">
-                                        Dekete
+                                        Delete
                                     </a>
                                 </td>
                             </tr>

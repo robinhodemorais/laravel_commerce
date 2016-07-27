@@ -3,6 +3,7 @@
 namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\Cart;
+use CodeCommerce\Product;
 use Illuminate\Http\Request;
 
 use CodeCommerce\Http\Requests;
@@ -35,5 +36,23 @@ class CartController extends Controller
         }
 
         return view('store.cart', ['cart' => Session::get('cart')]);
+    }
+
+    public function add($id)
+    {
+        //verifica se já tem a sessão o carrinho
+        if(Session::has('cart')) {
+            $cart = Session::get('cart');
+        } else {
+            $cart = $this->cart;
+        }
+
+        $product = Product::find($id);
+        $cart->add($id, $product->name, $product->price);
+
+        //envia o carrinho para a sessão
+        Session::set('cart', $cart);
+
+        return redirect()->route('cart');
     }
 }
