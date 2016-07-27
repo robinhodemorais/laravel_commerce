@@ -38,14 +38,23 @@ class CartController extends Controller
         return view('store.cart', ['cart' => Session::get('cart')]);
     }
 
-    public function add($id)
+    /**
+     * @return Cart
+     */
+    public function getCart()
     {
-        //verifica se já tem a sessão o carrinho
-        if(Session::has('cart')) {
+        if (Session::has('cart')) {
             $cart = Session::get('cart');
         } else {
             $cart = $this->cart;
         }
+        return $cart;
+    }
+
+    public function add($id)
+    {
+        //verifica se já tem a sessão o carrinho
+        $cart = $this->getCart();
 
         $product = Product::find($id);
         $cart->add($id, $product->name, $product->price);
@@ -55,4 +64,16 @@ class CartController extends Controller
 
         return redirect()->route('cart');
     }
+
+    public function destroy($id)
+    {
+        $cart = $this->getCart();
+        $cart->remove($id);
+
+        Session::set('cart', $cart);
+
+        return redirect()->route('cart');
+    }
+
+
 }

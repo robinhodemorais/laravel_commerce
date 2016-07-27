@@ -37,6 +37,7 @@ Route::get('category/{id}',['as'=>'store.category', 'uses' => 'StoreController@c
 Route::get('product/{id}',['as'=>'store.product', 'uses' => 'StoreController@product']);
 Route::get('cart',['as'=>'cart', 'uses' => 'CartController@index']);
 Route::get('cart/add/{id}',['as'=>'cart.add', 'uses' => 'CartController@add']);
+Route::get('cart/destroy/{id}',['as'=>'cart.destroy', 'uses' => 'CartController@destroy']);
 
 /*
 Route::group(['prefix'=> 'admin/categories'], function () {
