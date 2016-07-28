@@ -67,4 +67,9 @@ class Product extends Model
     {
         return $query->where('category_id','=',$type);
     }
+
+    public function scopeOfTag($query, $id)
+    {
+        return $query->where('tag_id', '=', $id);
+    }
 }
