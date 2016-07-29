@@ -75,5 +75,14 @@ class CartController extends Controller
         return redirect()->route('cart');
     }
 
+    public function update(Requests\CartRequest $request, $id)
+    {
+        $qtd = $request->get('qtd');
+        $cart = $this->getCart();
+        $cart->setQtd($id, $qtd);
+        Session::set('cart', $cart);
+        return redirect()->route('cart');
+    }
+
 
 }

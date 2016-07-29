@@ -31,9 +31,18 @@
                                 <td class="cart_price">
                                     <h4><a href="#">{{$item['price']}}</a> </h4>
                                 </td>
+
                                 <td class="cart_quantity">
-                                    <h4><a href="#">{{$item['qtd']}}</a> </h4>
+                                    {!! Form::open(['route'=>['store.cart.update', $k], 'method'=>'put']) !!}
+                                    <div class="input-group" style="width: 120px">
+                                        {!! Form::text('qtd', $item['qtd'], ['class'=>'form-control']) !!}
+                                        <span class="input-group-btn">
+                                        {!! Form::submit('Alterar', ['class'=>'btn btn-default']) !!}
+                                      </span>
+                                    </div><!-- /input-group -->
+                                    {!! Form::close() !!}
                                 </td>
+
                                 <td class="cart_total">
                                     <p href="cart_total_price">R$ {{$item['price'] * $item['qtd']}}</p>
                                 </td>

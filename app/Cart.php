@@ -54,4 +54,11 @@ class Cart
 
         return $total;
     }
+
+    public function setQtd($id, $qtd)
+    {
+        if($qtd > 0){
+            $this->items[$id]['qtd'] = $qtd;
+        }
+    }
 }
