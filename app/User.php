@@ -23,4 +23,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function orders()
+    {
+        //1 usuário pode ter muitos pedidos
+        return $this->hasMany('CodeCommerce\Order');
+    }
 }

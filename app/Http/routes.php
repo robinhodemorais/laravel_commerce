@@ -41,6 +41,14 @@ Route::get('cart/add/{id}',['as'=>'cart.add', 'uses' => 'CartController@add']);
 Route::get('cart/destroy/{id}',['as'=>'cart.destroy', 'uses' => 'CartController@destroy']);
 Route::put('cart/update/{id}', ['as' => 'store.cart.update', 'uses' => 'CartController@update']);
 
+Route::get('checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'CheckoutController@place']);
+
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+    'test' => 'TestController',
+]);
 /*
 Route::group(['prefix'=> 'admin/categories'], function () {
     Route::get('', 'AdminCategoriesController@index');
