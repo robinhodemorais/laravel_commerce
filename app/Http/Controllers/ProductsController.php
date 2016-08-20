@@ -49,7 +49,7 @@ class ProductsController extends Controller
 
     public function destroy($id){
         $this->productModel->find($id)->delete();
-        return redirect()->route('products');
+        return redirect()->route('       ');
     }
 
     /*Action responsavel para fazer a alteração*/

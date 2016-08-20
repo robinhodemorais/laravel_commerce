@@ -17,11 +17,11 @@ class TestController extends Controller
         ];
 
 
-       /* LOGA O USUÁRIO
+       // LOGA O USUÁRIO
        if (Auth::attempt($data)) {
             return "Logou";
         }
-       */
+
 
        //VERIFICA SE ESTÁ LOGADO
         if (Auth::check()){
