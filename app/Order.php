@@ -15,7 +15,7 @@ class Order extends Model
 
     public function items()
     {
-        return $this->$this->hasMany('CodeCommerce\OrderItem');
+        return $this->hasMany('CodeCommerce\OrderItem');
     }
 
     public function user()

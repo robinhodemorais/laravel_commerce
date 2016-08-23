@@ -32,11 +32,11 @@ class CheckoutController extends Controller
         $cart = Session::get('cart');
 
         if($cart->getTotal() > 0) {
-           $order = $orderModel->create(['user_id'=>Auth::user()->id, 'total'=>$cart->getTotal()]);
+           $orders = $orderModel->create(['user_id'=>Auth::user()->id, 'total'=>$cart->getTotal()]);
 
             foreach ($cart->all() as $k=>$item) {
                 //cria a order e adiciona os itens na order
-                $order->items()->create(['product_id'=>$k, 'price'=>$item['price'], 'qtd'=>$item['qtd']]);
+                $orders->items()->create(['product_id'=>$k, 'price'=>$item['price'], 'qtd'=>$item['qtd']]);
             }
         }
 
