@@ -61,4 +61,10 @@ class Cart
             $this->items[$id]['qtd'] = $qtd;
         }
     }
+
+    //limpa os itens do carrinho
+    public function clear()
+    {
+        $this->items = [];
+    }
 }

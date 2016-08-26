@@ -2,6 +2,7 @@
 
 namespace CodeCommerce\Http\Controllers;
 
+use CodeCommerce\Category;
 use CodeCommerce\Order;
 use CodeCommerce\OrderItem;
 use Illuminate\Http\Request;
@@ -12,11 +13,11 @@ use Illuminate\Support\Facades\Session;
 
 class CheckoutController extends Controller
 {
-    public function __construct()
+/*    public function __construct()
     {
         //dessa forma garente que o usuário está conectado
         $this->middleware('auth');
-    }
+    }*/
     /*Metodo para processar o carrinho*/
     public function place(Order $orderModel, OrderItem $orderItem)
     {
@@ -36,8 +37,13 @@ class CheckoutController extends Controller
                 //cria a order e adiciona os itens na order
                 $order->items()->create(['product_id'=>$k, 'price'=>$item['price'], 'qtd'=>$item['qtd']]);
             }
+            //limpa o carrinho
+            $cart->clear();
+
+            return view('store.checkout', compact('order'));
         }
 
-        return view('store.checkout', compact('order'));
+        $categories = Category::all();
+        return view('store.checkout', ['cart'=>'empty', 'categories'=>$categories]);
     }
 }
