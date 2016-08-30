@@ -29,6 +29,7 @@ class CheckoutController extends Controller
         }
         //pega o carrinho da sessão
         $cart = Session::get('cart');
+        $categories = Category::all();
 
         if($cart->getTotal() > 0) {
            $order = $orderModel->create(['user_id'=>Auth::user()->id, 'total'=>$cart->getTotal()]);
@@ -40,10 +41,10 @@ class CheckoutController extends Controller
             //limpa o carrinho
             $cart->clear();
 
-            return view('store.checkout', compact('order'));
+            return view('store.checkout', compact('order','categories','cart'));
         }
 
-        $categories = Category::all();
+
         return view('store.checkout', ['cart'=>'empty', 'categories'=>$categories]);
     }
 }

@@ -52,7 +52,7 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i> Minha conta</a></li>
+                            <li><a href="{{route('account.orders')}}"><i class="fa fa-user"></i> Minha conta</a></li>
                             <li><a href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> Carrinho</a></li>
                             <!--verificando se está autenticado -->
                             @if(Auth::guest())
