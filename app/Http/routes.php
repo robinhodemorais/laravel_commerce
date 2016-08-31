@@ -55,6 +55,7 @@ Route::group(['middleware'=>'auth'], function (){
     Route::get('account/orders', ['as' => 'account.orders', 'uses' => 'AccountController@orders']);
 });
 
+Route::get('test', 'CheckoutController@test');
 
 Route::get('email', function (){
     //dispara o evento

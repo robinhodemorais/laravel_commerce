@@ -32,9 +32,10 @@ class SendEmailCheckout
 
         Mail::send('store.email', compact('user', 'order'), function($message) use ($order, $user)
         {
-            $message->from('robinhodemorais@gmail.com', 'Robinho FROM');
-            $message->to('robinhodemorais@gmail.com', 'Robinho');
-            $message->subject('Teste de Email!');
+            $message->from('contato@commerce.com', 'Code Commerce');
+            //$message->to('robinhodemorais@gmail.com', 'Robinho');
+            $message->to($user->email, $user->name);
+            $message->subject('Code Commerce | Recebemos seu Pedido');
         });
 
         /*
