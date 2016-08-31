@@ -4,11 +4,13 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "5.2.*",
-        "fzaninotto/faker": "^1.6"
+        "fzaninotto/faker": "^1.6",
+        "wesleywillians/laravel-pagseguro": "dev-master"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
