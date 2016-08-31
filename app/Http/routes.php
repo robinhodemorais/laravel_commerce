@@ -29,6 +29,15 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth', 'where'=>['id' => '[0-9]+
             Route::get('destroy/{id}/image',['as'=>'products.images.destroy', 'uses'=>'ProductsController@destroyImage']);
         });
     });
+
+    Route::group(['prefix' => 'users'], function() {
+        Route::get('', ['as' => 'users', 'uses' => 'UsersController@index']);
+        Route::post('', ['as' => 'users.store', 'uses' => 'UsersController@store']);
+        Route::get('create', ['as' => 'users.create', 'uses' => 'UsersController@create']);
+        Route::get('{id}/destroy', ['as' => 'users.destroy', 'uses' => 'UsersController@destroy']);
+        Route::get('{id}/edit', ['as' => 'users.edit', 'uses' => 'UsersController@edit']);
+        Route::put('{id}/update', ['as' => 'users.update', 'uses' => 'UsersController@update']);
+    });
 });
 
 
@@ -46,6 +55,11 @@ Route::group(['middleware'=>'auth'], function (){
     Route::get('account/orders', ['as' => 'account.orders', 'uses' => 'AccountController@orders']);
 });
 
+
+Route::get('email', function (){
+    //dispara o evento
+    return view('store.email');
+});
 
 Route::controllers([
     'auth' => 'Auth\AuthController',

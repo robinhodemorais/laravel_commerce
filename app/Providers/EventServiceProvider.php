@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
         'CodeCommerce\Events\SomeEvent' => [
             'CodeCommerce\Listeners\EventListener',
         ],
+        'CodeCommerce\Events\CheckoutEvent' => [
+            'CodeCommerce\Listeners\SendEmailCheckout',
+        ],
     ];
 
     /**

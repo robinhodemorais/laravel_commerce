@@ -35,6 +35,7 @@
 				<ul class="nav navbar-nav">
 
 					<li><a href="{{ url('/') }}">Home</a></li>
+					<li><a href="{{ route('users') }}">Usuários</a></li>
 					<li><a href="{{ route('categories') }}">Categories</a></li>
 					<li><a href="{{ route('products') }}">Produtcs</a></li>
 
