@@ -23,7 +23,7 @@
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
                             <li><a href="#"><i class="fa fa-phone"></i> (19) 5555-5555</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> atendimento@schoolofnet.com</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> atendimento@atendimento.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -84,15 +84,15 @@
                             <li><a href="/" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="shop.html">Products</a></li>
+                                <!--<li><a href="shop.html">Products</a></li>
                                     <li><a href="product-details.html">Product Details</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>-->
+                                    <li><a href="{{route('cart')}}">Cart</a></li>
+                                    <li><a href="/auth/login">Login</a></li>
                                 </ul>
                             </li>
 
-                            <li><a href="contact-us.html">Contact</a></li>
+                            <!--<li><a href="contact-us.html">Contact</a></li> -->
                         </ul>
                     </div>
                 </div>
