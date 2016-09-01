@@ -44,6 +44,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'auth_admin' => \CodeCommerce\Http\Middleware\AuthenticateAdmin::class,
+        'auth_user' => \CodeCommerce\Http\Middleware\AuthenticateUser::class,
         'auth' => \CodeCommerce\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
