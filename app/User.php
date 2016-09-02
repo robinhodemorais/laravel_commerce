@@ -29,4 +29,9 @@ class User extends Authenticatable
         //1 usuário pode ter muitos pedidos
         return $this->hasMany('CodeCommerce\Order');
     }
+
+    public function address()
+    {
+        return $this->hasMany('CodeCommerce\Address');
+    }
 }

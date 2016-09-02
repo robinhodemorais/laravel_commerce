@@ -32,8 +32,7 @@
 
         <div class="form-group">
             {!! Form::label('is_admin', 'Permission:') !!}
-            {!! Form::select('is_admin', ['1' => 'Administrador', '0' => 'Usuário'], $user->id, ['class'=>'form-control']) !!}
-            {!! Form::select('is_admin', [$user->is_admin => 'Usuário', 1 => 'SIM'], null, ['class' => 'form-control']) !!}
+            {!! Form::select('is_admin', [$user->is_admin => 'Usuário', 1 => 'Adminstrador'], null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
