@@ -77,4 +77,57 @@ class CheckoutController extends Controller
 
         return redirect($response->getRedirectionUrl());
     }
+
+    public function payment_status(Request $request)
+    {
+        if ($request->get('notificationType') == 'transaction')
+        {
+            $url = 'https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/notifications/' . $request->get('notificationCode') . '?email=' . config('pagseguro.email') . '&token=' . config('pagseguro.token');
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            $transaction = curl_exec($curl);
+            curl_close($curl);
+            if ($transaction == 'Unauthorized')
+            {
+                //MSG de ERRO!
+                exit();
+            }
+            $transaction = simplexml_load_string($transaction);
+            switch ($transaction->status)
+            {
+                case 1:
+                    $code = 2;
+                    break; //Aguardando pagamento
+                case 2:
+                    $code = 2;
+                    break; //Em análise
+                case 3:
+                    $code = 3;
+                    break; //Paga
+                case 4:
+                    $code = 3;
+                    break; //Disponível
+                case 5:
+                    $code = 1;
+                    break; //Em disputa
+                case 6:
+                    $code = 6;
+                    break; //Devolvida
+                case 7:
+                    $code = 6;
+                    break; //Cancelada
+                case 8:
+                    $code = 6;
+                    break; //Chargeback debitado
+                case 9:
+                    $code = 6;
+                    break; //Em contestação
+                default:
+                    $code = 1;
+            }
+            $order = Order::where('id', $transaction->reference)->firstOrFail();
+            $order->update(['stat_id' => $code, 'code_pagseguro' => $transaction->code]);
+        }
+    }
 }

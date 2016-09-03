@@ -19,6 +19,8 @@ Route::group(['middleware'=>'auth'], function (){
 });
 */
 
+Route::post('payment_status', ['as' => 'payment_status', 'uses' => 'CheckoutController@payment_status']);
+
 Route::group(['prefix' => 'account', 'middleware'=>'auth', 'where' => ['id' => '[0-9]+']], function(){
     Route::get('', ['as' => 'account', 'uses' => 'AccountController@index']);
     Route::get('/orders', ['as' => 'account_orders', 'uses' => 'AccountController@orders']);
